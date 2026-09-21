@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-box">
+        <h1>Admin Login</h1>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required><br>
+
+            <div class="password-wrapper">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <span class="toggle-eye" onclick="togglePassword()">👁️</span>
+            </div>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const pwd = document.getElementById("password");
+            pwd.type = pwd.type === "password" ? "text" : "password";
+        }
+    </script>
+</body>
+</html>
